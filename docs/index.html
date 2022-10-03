@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="icon" href="images/favicon.png" sizes="32x32" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Currency Converter</title>
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn-back" type="button">Back</button>
+      <div class="main-screen">
+        <div class="header-part">
+          <div class="form-group amount-group">
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" placeholder="Amount" />
+          </div>
+          <div class="form-group currency-group">
+            <label for="from">From</label>
+            <div class="dropdown">
+              <button class="dropbtn" id="from" type="button">From</button>
+              <div class="dropdownContent"></div>
+            </div>
+          </div>
+          <div class="convert-icon"></div>
+          <div class="form-group currency-group">
+            <label for="to">To</label>
+            <div class="dropdown">
+              <button class="dropbtn" id="to" type="button">To</button>
+              <div class="dropdownContent"></div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-part">
+          <div class="results">
+            <span class="results--from"></span><span class="results--to"></span>
+          </div>
+          <div class="exchange-rates">
+            <div class="firstCurEx"></div>
+            <div class="secondCurEx"></div>
+          </div>
+        </div>
+      </div>
+      <button class="btn-convert" type="button">Convert</button>
+      <div class="logo-box">
+        <div class="from-logo-box">
+          <img
+            class="from-logo"
+            src=""
+            alt="country-logo"
+            onerror="this.style.display='none'"
+          />
+        </div>
+        <div class="to-logo-box">
+          <img
+            class="to-logo"
+            src=""
+            alt="country-logo"
+            onerror="this.style.display='none'"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

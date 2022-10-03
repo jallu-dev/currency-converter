@@ -1,0 +1,394 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  height: 100vh;
+  background-image: linear-gradient(to right top, #f8ecd1, #14c38e);
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 50vh;
+  width: 70vw;
+  margin: 20vh auto;
+  border-radius: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 1rem 1.5rem 3rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  overflow: hidden;
+}
+
+.btn-back {
+  z-index: 1000;
+  position: absolute;
+  top: 2rem;
+  padding: 1rem 2rem;
+  background-color: #14c38e;
+  color: #fefefe;
+  border: none;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  overflow: hidden;
+  cursor: pointer;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  transform: translateX(-10rem);
+  transition: transform 0.3s;
+}
+
+.main-screen {
+  display: flex;
+  flex: 8;
+  padding: 4rem;
+  padding-top: 8rem;
+  flex-direction: column;
+}
+
+.header-part {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.form-group {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  backdrop-filter: 10px;
+}
+
+input {
+  font-size: 1.4rem;
+}
+
+.btn-convert {
+  flex: 1;
+  position: relative;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: #14c38e;
+  border: none;
+  font-size: 1.8rem;
+  letter-spacing: 0.1rem;
+  overflow: hidden;
+  opacity: 1;
+  cursor: pointer;
+  transition: flex 0.3s, padding 0.3s, color 1s;
+}
+
+.btn-convert:hover {
+  z-index: 10;
+  color: #f1f1f1;
+}
+
+.btn-convert::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 5%;
+  height: 20%;
+  background-color: #14c38e;
+  color: #fefefe;
+  transition: height 0.3s, width 0.3s ease-out 0.3s;
+  opacity: 1;
+}
+
+.btn-convert:hover::before {
+  width: 100%;
+  z-index: -10;
+  width: 100%;
+  height: 100%;
+}
+
+.dropbtn {
+  position: relative;
+  background-color: transparent;
+  color: #14c38e;
+  text-align: left;
+  padding: 7px 1.5rem;
+  font-size: 1.4rem;
+  border: 1px solid #14c38e;
+  cursor: pointer;
+  width: 85%;
+  height: 3rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownContent {
+  display: none;
+  background-color: transparent;
+  width: 85%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 25vh;
+  overflow-y: scroll;
+  cursor: pointer;
+  border-radius: 5px;
+
+  transition: display 0.4s;
+}
+
+.dropdownContent span {
+  display: inline;
+  font-size: 1rem;
+}
+
+.dropdownContent a {
+  color: #14c38e;
+  padding: 6px 16px;
+  /* text-align: center; */
+  text-decoration: none;
+  display: block;
+  /* overflow: hidden; */
+  height: 2.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.dropdownContent a:hover {
+  background-color: #f1f1f1;
+  color: #14c38e;
+}
+
+.dropbtn:hover + .dropdownContent,
+.dropdownContent:hover {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropbtn:hover .dropbtn {
+  outline: 4px solid #14c38e;
+}
+
+label {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #fefefe;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+#amount {
+  position: relative;
+  height: 30px;
+  border: 1px solid #14c38e;
+  width: 85%;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 0 1.5rem;
+  color: #14c38e;
+}
+
+#amount::-webkit-input-placeholder {
+  color: #14c38e;
+  text-transform: uppercase;
+}
+
+#amount:focus {
+  outline: none;
+}
+
+.footer-part {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateX(200px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.results {
+  flex: 1;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+}
+
+.results span {
+  display: inline;
+  margin-left: 1rem;
+}
+
+.results--to {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #333;
+}
+
+.exchange-rates {
+  flex: 1;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.logo-box {
+  position: absolute;
+  right: 2rem;
+  bottom: 0;
+  width: 50rem;
+  height: 20vh;
+  display: none;
+  justify-content: space-between;
+  transition: display 0.3s;
+}
+
+.from-logo-box,
+.to-logo-box {
+  width: 45%;
+  height: 100%;
+}
+
+.from-logo,
+.to-logo {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+
+  body {
+    padding: 0rem;
+  }
+
+  .container {
+    width: 80vw;
+    margin: 20vh auto;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .container {
+    height: 70vh;
+    margin: 15vh auto;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  .container {
+    height: 90vh;
+    margin: 5vh auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 50%;
+  }
+
+  .container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    flex-direction: column;
+  }
+
+  .btn-convert {
+    flex: 1;
+    width: 100%;
+    position: relative;
+    padding: 1rem 2rem;
+    background-color: #14c38e;
+    color: #f1f1f1;
+    border: none;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    overflow: hidden;
+    opacity: 1;
+    cursor: pointer;
+    transition: flex 0.3s, padding 0.3s, color 1s;
+  }
+
+  .btn-convert:active {
+    background-color: #129e74;
+  }
+
+  .btn-convert::before {
+    width: 0;
+    height: 0;
+    transition: none;
+    opacity: 0;
+  }
+
+  .btn-convert:hover::before {
+    width: 0;
+    height: 0;
+  }
+
+  .header-part {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  .amount-group,
+  .currency-group {
+    width: 80%;
+  }
+
+  .footer-part {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: translateX(200px);
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .results {
+    vertical-align: top;
+  }
+
+  .logo-box {
+    position: static;
+    width: 100vw;
+    height: 15rem;
+    display: none;
+    justify-content: space-between;
+    transition: display 0.3s;
+  }
+}
